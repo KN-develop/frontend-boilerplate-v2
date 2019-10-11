@@ -1,0 +1,34 @@
+<script type="text/x-template" id="vue-template-input-text">
+  <div class="form__field">
+    <div
+      class="input"
+      :class="{'mod-active': params.value, 'mod-error': params.error, 'mod-info': footerInfo}"
+    >
+      <input
+        class="input-text mod-default"
+        type="text"
+        :id="params.id"
+        :name="params.name"
+        :disabled="disabled"
+        v-model="params.value"
+        @focus="onFocus"
+        @blur="onBlur"
+      >
+      <span
+        class="input__placeholder"
+        v-if="placeholder"
+      >${placeholder}</span>
+      <span class="input__footer-info">${footerInfo}</span>
+      <button
+        class="input__reset"
+        type="button"
+        tabindex="-1"
+        @click="onClear"
+      >
+        <svg width="24" height="24">
+          <use xlink:href="#i-close" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</script>

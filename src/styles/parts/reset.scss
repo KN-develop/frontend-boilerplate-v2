@@ -1,0 +1,137 @@
+body {
+  margin:                  0;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width:               320px;
+  text-size-adjust:        none;
+  overflow-x:              hidden;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  &.mod-popup-is-open {
+    position: fixed;
+    overflow: hidden;
+    width:    100%;
+    height:   100%;
+  }
+}
+
+// Типографика и блоки
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  color:  inherit;
+}
+
+a {
+  text-decoration: none;
+  color:           inherit;
+  transition:      color $transition-hover-off;
+
+  &:hover {
+    color:      $color-link-hover;
+    transition: color $transition-hover-on;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing:  0;
+}
+
+ul,
+ol {
+  margin:     0;
+  padding:    0;
+  list-style: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+// Интерактив и пользовательский ввод
+
+a,
+button,
+label {
+  // Подсветка при тапе
+  -webkit-touch-callout:       none;
+  -webkit-user-select:         none;
+  -khtml-user-select:          none;
+  -moz-user-select:            none;
+  -ms-user-select:             none;
+  user-select:                 none;
+  -webkit-tap-highlight-color: transparent;
+  cursor:                      pointer;
+}
+
+button,
+input,
+textarea,
+select {
+  color:              inherit;
+  font-family:        inherit;
+  margin:             0;
+  padding:            0;
+  background:         none;
+  border:             none;
+  border-radius:      0;
+  outline:            none;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  cursor:             pointer;
+}
+
+select::-ms-expand {display: none;}
+
+input::-ms-clear {display: none;}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin:             0;
+  }
+}
+
+// Пытаемся прятать подсветку автозаполнения полей
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background: none !important;
+  transition: background-color 999s, color 999s !important;;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  -webkit-appearance: none;
+  display:            none;
+  margin:             0;
+}

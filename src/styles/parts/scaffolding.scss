@@ -1,0 +1,177 @@
+body {
+  font-family: $font-family-default;
+  color: $color-dark;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0.4px;
+}
+
+button,
+a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+}
+
+a {
+  color: $color-primary-brand;
+  transition-duration: $transition-hover-off;
+
+  &:hover,
+  &:focus,
+  &.mod-hover {
+    color: $color-link-color;
+    transition-duration: $transition-hover-on;
+  }
+}
+
+@mixin t-h1() {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: normal;
+}
+
+@mixin t-h2() {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: normal;
+}
+
+@mixin t-h3() {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+}
+
+@mixin t-h4() {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0.4px;
+}
+
+@mixin t-btn-link() {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+}
+
+@mixin t-default-big() {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+@mixin t-default() {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+}
+
+@mixin t-caption-upper() {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+@mixin t-caption() {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+}
+
+.t-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  white-space: nowrap;
+  border-radius: 12px;
+  background-color: $color-light-cloud;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+
+@mixin t-tag() {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  white-space: nowrap;
+  border-radius: 12px;
+  background-color: $color-light-cloud;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+
+.t-ul-1 {
+  li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: $color-dark-light;
+      border-radius: 50%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.t-ul-2 {
+  list-style-image: url("../assets/icons/check.svg");
+  list-style-position: outside;
+  margin-left: 20px;
+  li {
+    padding-left: 8px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<div class="popup js-popup" data-popup="{{popup.name}}" data-type="{{popup.type}}">
+  <div class="popup__container js-popup-container">
+    <button class="popup__close js-popup-close">
+      <svg width="32" height="32">
+        <use xlink:href="#i-close-remove" />
+      </svg>
+    </button>
+    {% block popupBody %}{% endblock %}
+  </div>
+</div>

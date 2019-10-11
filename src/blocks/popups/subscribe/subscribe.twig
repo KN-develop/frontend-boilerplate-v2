@@ -1,0 +1,56 @@
+{% extends '../popup.twig' %}
+
+{% block popupBody %}
+
+  {% set popup = {
+    name: 'subscribe',
+    type: '',
+  } %}
+
+  <div class="popup-subscribe">
+    <form
+      class="popup-subscribe js-subscribe-form"
+      @submit.prevent="onSubmitForm"
+      novalidate
+    >
+      <div>
+        <h3 class="popup-subscribe__title">Подписка на рассылку</h3>
+        <p class="popup-subscribe__text">
+          Вы будете получать только полезные уведомления о новых товарах, акциях или обучающих продуктах не чаще пары
+          раз в месяц.
+          <span style="display: block" class="mod-no-sm">Мы НЕ рассылаем спам.</span>
+        </p>
+        <text-input
+          :params="name"
+          :placeholder="'Ваше имя'"
+          :required="true"
+          ref="questionName"
+        ></text-input>
+
+        <email-input
+          :params="email"
+          :placeholder="'Электронная почта'"
+          :required="true"
+          ref="questionEmail"
+        ></email-input>
+
+
+        <div class="form__button-container">
+          <p class="form__alert" v-if="hasError">
+            <svg width="24" height="24">
+              <use xlink:href="#i-alert-triangle"/>
+            </svg>
+            Вы не заполнили обязательные поля
+          </p>
+          <button class="question-form__button button prime-on-light" type="submit">Подписаться</button>
+        </div>
+
+
+        <span class="question-form__policy">Нажимая на эту кнопку я принимаю <a href="#">условия обработки персональных данных</a> и <a
+            href="#"
+          >политику конфиденциальности</a></span>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

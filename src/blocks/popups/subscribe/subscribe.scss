@@ -1,0 +1,40 @@
+[data-popup=subscribe-send] {
+  .popup__close {
+    display: none;
+  }
+
+  .popup__container {
+    padding: 32px 16px;
+
+    @include w-from($screen-lg) {
+      padding: 32px;
+    }
+  }
+}
+
+[data-popup=subscribe] {
+  .popup__container {
+    padding: 28px 16px 35px;
+
+    @include w-from($screen-lg) {
+      padding: 32px 32px 48px;
+    }
+  }
+}
+
+.popup-subscribe {
+  &__title {
+    @include t-h4();
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include w-from($screen-lg) {
+      @include t-h3();
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}

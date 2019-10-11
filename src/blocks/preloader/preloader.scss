@@ -1,0 +1,44 @@
+.preloader {
+  position:            absolute;
+  top:                 0;
+  left:                0;
+  right:               0;
+  bottom:              0;
+  background-color:    rgba(white, 0.9);
+  z-index:             90;
+  transition-property: opacity, visibility;
+  transition-duration: $transition-slow;
+
+  img {
+    animation: preloader linear infinite 2s;
+  }
+
+  &__temp {
+    position:  sticky;
+    top:       50%;
+    left:      50%;
+    width:     40px;
+    height:    200px;
+    transform: translateX(-50%);
+  }
+
+  &[data-show="false"] {
+    opacity:             0;
+    visibility:          hidden;
+    transition-duration: $transition-normal;
+  }
+}
+
+@keyframes preloader {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(480deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}

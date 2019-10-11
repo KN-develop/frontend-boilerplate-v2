@@ -1,0 +1,27 @@
+<script type="text/x-template" id="vue-template-input-textarea">
+  <div class="form__field">
+    <div class="textarea"
+         :class="{'mod-active': params.value, 'mod-error': params.error, 'mod-info': true}"
+    >
+      <textarea class="textarea__element mod-default"
+                :id="params.id"
+                :name="params.name"
+                v-model="params.value"
+                :maxlength="maxLength"
+                @focus="onFocus"
+                @blur="onBlur"
+      ></textarea>
+      <span class="textarea__placeholder">${placeholder}</span>
+      <span class="textarea__footer-info">${curLength}/${maxLength}</span>
+      <button class="textarea__reset"
+              type="button"
+              tabindex="-1"
+              @click="onClear"
+      >
+        <svg width="24" height="24">
+          <use xlink:href="#i-close" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</script>

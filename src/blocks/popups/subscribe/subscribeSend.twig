@@ -1,0 +1,16 @@
+{% extends '../popup.twig' %}
+
+{% block popupBody %}
+
+  {% set popup = {
+    name: 'subscribe-send',
+    type: '',
+  } %}
+
+  <div class="question-send">
+    <h3>Спасибо за подписку!</h3>
+    <p>Проверьте почту, там вас ждёт бесплатный чек-лист по уходу за волосами :)</p>
+    <button class="question-send__button button prime-on-light js-popup-close" type="button">Закрыть</button>
+  </div>
+
+{% endblock %}

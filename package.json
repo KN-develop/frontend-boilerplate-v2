@@ -1,0 +1,46 @@
+{
+  "name": "frontend-boilerplate-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.babels.js",
+  "author": "Nikolay Ivanov n_13@bk.ru",
+  "license": "MIT",
+  "browserslist": [
+    "last 3 version",
+    "> 1%"
+  ],
+  "scripts": {
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-require": "^1.0.1",
+    "browser-sync": "^2.26.7",
+    "browserslist": "^4.7.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "cssnext": "^1.8.4",
+    "del": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify": "^3.0.2",
+    "line-clamp": "^1.0.0",
+    "node-notifier": "^5.4.3",
+    "postcss-preset-env": "^6.7.0",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "eslint": "^6.5.1"
+  }
+}

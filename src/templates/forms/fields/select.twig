@@ -1,0 +1,29 @@
+<script type="text/x-template" id="vue-template-input-select">
+  <div class="form__row input select mod-textarea">
+    <span class="input__label mod-select-placeholder">${label}</span>
+    <div class="input__container"
+         :class="{'mod-with-text': focus, 'mod-error': params.error}"
+         :data-error="errorMessage">
+      <v-select
+        v-if="!showNative"
+        :options="params.values"
+        :showLabels="false"
+        :allow-empty="false"
+        :placeholder="placeholder"
+        :searchable="false"
+        track-by="value"
+        label="text"
+        open-direction="bottom"
+        v-model="params.selected"
+        @open="onOpen"
+        @select="onChange"
+        @close="onClose">
+        <span slot="noResult">Ничего не найдено</span>
+        <span slot="noOptions">Ничего не найдено</span>
+      </v-select>
+      <select v-else v-model="params.selected" @change="onChange">
+        <option v-for="option in params.values" :value="option">${option.text}</option>
+      </select>
+    </div>
+  </div>
+</script>

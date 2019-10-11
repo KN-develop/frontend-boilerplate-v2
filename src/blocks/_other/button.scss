@@ -1,0 +1,127 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 13px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: 22px;
+  text-align: center;
+  color: $color-dark;
+  border-radius: 4px;
+  border: none;
+  transition-duration: $transition-hover-off;
+
+  svg {
+    transition-duration: $transition-hover-off;
+  }
+
+  &:hover,
+  &:focus {
+    transition-duration: $transition-hover-on;
+
+    svg {
+      opacity: 0.6;
+      transition-duration: $transition-hover-on;
+    }
+  }
+
+  &.prime-on-light {
+    background-color: $color-dark;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: $color-dark-light;
+    }
+
+    &:disabled {
+      color: $color-dark-light;
+      background-color: $color-dark-15;
+    }
+  }
+
+  &.sec-on-light {
+    background-color: transparent;
+    border: thin solid $color-dark;
+
+    &:hover,
+    &:focus {
+      color: $color-dark-light;
+      border-color: $color-dark-30;
+    }
+
+    &:disabled {
+      color: $color-dark-30;
+    }
+  }
+  &.sec-on-dark {
+    color: white;
+    background-color: $color-dark;
+    border: thin solid white;
+
+    &:hover,
+    &:focus {
+      color: $color-dark;
+      background-color: white;
+    }
+
+    &:disabled {
+      color: $color-white-50;
+      border-color: $color-white-50;
+    }
+  }
+
+  &.sec-small-light {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px 4px;
+    background-color: transparent;
+    border: thin solid $color-dark;
+
+    &:hover,
+    &:focus {
+      color: $color-dark-light;
+      border-color: $color-dark-30;
+    }
+
+    &:disabled {
+      color: $color-dark-30;
+    }
+  }
+
+  &.sec-small-icon-light {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px 4px 24px;
+    background-color: transparent;
+    border: thin solid $color-dark;
+
+    svg {
+      display: inline-block;
+      margin-left: 12px;
+      fill: $color-dark;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-dark-light;
+      border-color: $color-dark-30;
+      svg {
+        fill: $color-dark-light;
+      }
+    }
+
+    &:disabled {
+      color: $color-dark-30;
+
+      svg {
+        fill: $color-dark-30;
+      }
+    }
+  }
+}

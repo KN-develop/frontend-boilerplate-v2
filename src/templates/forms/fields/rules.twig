@@ -1,0 +1,13 @@
+<script type="text/x-template" id="vue-template-input-rules">
+  <div class="form__field checkbox mod-account" :class="{'mod-error': params.error}">
+    <input type="checkbox"
+           :id="params.id"
+           :name="params.name"
+           :checked="params.checked"
+           @click="onClick"
+    >
+    <label :for="params.id">
+      ${text}&nbsp;<a class="form__link" href="rules.html" target="_blank">${linkText}</a>
+    </label>
+  </div>
+</script>

@@ -1,0 +1,100 @@
+.popup {
+  position:        fixed;
+  opacity:         0;
+  visibility:      hidden;
+  top:             0;
+  left:            0;
+  right:           0;
+  height:          100vh;
+  background:      rgba(122, 128, 140, 0.4);
+  backdrop-filter: blur(8px);
+  z-index:         800;
+  overflow:        auto;
+  transition-duration: 500ms;
+
+  &__container {
+    @include e-lvl-3();
+    position:         absolute;
+    box-sizing:       border-box;
+    width:            calc(100% - 32px);
+    padding:          28px 16px 32px;
+    max-width:        440px;
+    max-height:       100%;
+    top:              50%;
+    left:             50%;
+    border-radius:    4px;
+    background-color: white;
+    border:           thin solid $color-dark-light;
+    opacity: 0;
+    transform:        translate3d(0,100px,0) scale(.6);
+    transition-duration: 500ms;
+  }
+
+  &__close {
+    @include inc-click-area(10px);
+    position:  absolute;
+    top:       8px;
+    right:     8px;
+    border-radius: 4px;
+    transform: none;
+
+    svg {
+      display: block;
+      fill: $color-dark-30;
+      transition-duration: $transition-hover-off;
+    }
+
+    @include w-from($screen-md) {
+      top: 0;
+      right: unset;
+      left: calc(100% + 8px);
+      background-color: $color-dark-15;
+
+      svg {
+        fill: $color-dark;
+      }
+
+      &:hover {
+        svg {
+          fill: white;
+          transition-duration: $transition-hover-on;
+        }
+      }
+    }
+  }
+
+  &.mod-show {
+    opacity:    1;
+    transition-duration: 200ms;
+    visibility: visible;
+
+    .popup__container {
+      animation-name: popupShow;
+      animation-fill-mode: forwards;
+      animation-duration: 0.5s;
+      animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.27);
+    }
+  }
+}
+
+@keyframes popupShow {
+  0% {
+    transform:        translate3d(0,100px,0) scale(.6);
+    opacity: 0;
+  }
+  100% {
+    transform:        translate3d(-50%,-50%,0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cookieShow {
+  0% {
+    transform:        translate3d(0,100px,0) scale(.6);
+    opacity: 0;
+  }
+  100% {
+    transform:        translate3d(0,0,0) scale(1);
+    opacity: 1;
+  }
+}

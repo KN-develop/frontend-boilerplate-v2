@@ -1,0 +1,77 @@
+@keyframes js-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mod-only-lg {
+  @include w-to($screen-lg) {display: none !important;}
+}
+
+.mod-only-sm {
+  @include w-from($screen-md) {display: none !important;}
+}
+
+.mod-only-md {
+  @include w-to($screen-md) {display: none !important;}
+  @include w-from($screen-lg) {display: none !important;}
+}
+
+.mod-no-sm {
+  @include w-to($screen-md) {display: none !important;}
+}
+
+.mod-no-lg {
+  @include w-from($screen-lg) {display: none !important;}
+}
+
+.mod-visually-hidden {
+  position: absolute;
+  width:    1px;
+  height:   1px;
+  margin:   -1px;
+  border:   0;
+  padding:  0;
+  clip:     rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.js-hidden {
+  visibility: hidden;
+}
+
+.js-ready {
+  animation:  js-in $transition-normal ease-in;
+  visibility: visible;
+}
+
+.rub {
+  font-family: 'ALSRubl-Verdana', Verdana, sans-serif;
+  font-weight: 400;
+  font-style:  normal;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1234px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include w-from($screen-md) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.line-clamp-2 {
+  width: 100%;
+}

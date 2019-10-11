@@ -1,0 +1,36 @@
+.notification {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 82px;
+  padding: 24px 16px;
+  border-radius: 8px;
+  background-color: $color-light-cloud;
+
+  p {
+    @include t-default-big();
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  @include w-from($screen-md) {
+    @include display-flex(row, center, space-between);
+    padding: 17px 16px;
+
+    p {
+      padding-right: 32px;
+      margin-bottom: unset;
+    }
+
+    &__button {
+      width: 180px;
+    }
+  }
+
+  @include w-from($screen-lg) {
+    padding: 17px 32px;
+  }
+}

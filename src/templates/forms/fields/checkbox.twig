@@ -1,0 +1,12 @@
+<script type="text/x-template" id="vue-template-input-checkbox">
+  <div class="form__field mod-checkbox">
+    <span class="form__field-placholder">${params.placeholder}</span>
+    <label v-for="item in params.values" :for="item.id">
+      <input type="checkbox"
+             :id="item.id"
+             :name="params.name"
+             :checked="item.checked">
+      <span>${item.title}</span>
+    </label>
+  </div>
+</script>

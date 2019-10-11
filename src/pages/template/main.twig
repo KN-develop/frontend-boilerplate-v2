@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% include "../parts/meta.twig" %}
+<body>
+
+{% include "../../blocks/browser-update/browser-update.twig" %}
+
+{% block header %}
+  {% include "../../blocks/header/header.twig" %}
+{% endblock %}
+
+<main>
+  {% include '../../blocks/preloader/preloader.twig' %}
+  {% block body %}{% endblock %}
+</main>
+
+{% block footer %}
+  {% include "../../blocks/footer/footer.twig" %}
+{% endblock %}
+
+
+{% block popups %}
+  {% include "../../blocks/popups/subscribe/subscribe.twig" %}
+  {% include "../../blocks/popups/subscribe/subscribeSend.twig" %}
+{% endblock %}
+
+{% block vueTemplates %}{% endblock %}
+
+{% block scripts %}
+  <script src="scripts/vendor/aos.js"></script>
+  <script src="scripts/vendor/vue.js"></script>
+  <script src="scripts/vendor/jquery-3.2.1.js"></script>
+  <script src="scripts/vendor/slick.min.js"></script>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/index.js" defer></script>
+{% endblock %}
+</body>
+</html>
