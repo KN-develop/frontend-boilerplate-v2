@@ -12,6 +12,6 @@ export const isProduction = () => {
  * @returns {string}
  */
 export const getDir = () => {
-  return 'build';
+  return 'dev';
 };
 

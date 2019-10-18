@@ -23,5 +23,5 @@ export function setProduction(cb) {
  * @returns {Promise<string[]>}
  */
 export function clearBuild() {
-  return del(['build/**/*']);
+  return del(['dev/**/*']);
 }

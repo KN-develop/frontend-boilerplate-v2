@@ -1,4 +1,5 @@
 import browserSync from 'browser-sync';
+import {getDir} from "../helpers";
 
 import {
   callbackErrorRedirecting
@@ -27,7 +28,7 @@ export function runDevServer(cb) {
     reloadDebounce: 150,
     notify:         false,
     port:           9000,
-    server:         {baseDir: './build'}
+    server:         {baseDir: `./${getDir()}`}
   };
 
   server.init(params, callbackErrorRedirecting);
